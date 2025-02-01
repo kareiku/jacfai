@@ -1,15 +1,14 @@
-package io.github.kareiku.jacfai;
-
-import java.util.List;
+package io.github.kareiku.yacfai;
 
 public class App {
     public static void main(String[] args) {
-        List<Board> boards = List.of(new Board());
+        Board board = new Board(new Piece[][]{
+                {Piece.RED, Piece.RED, Piece.BLUE},
+                {Piece.BLUE, Piece.RED, Piece.RED},
+                {Piece.NONE, Piece.BLUE, Piece.BLUE},
+                {Piece.NONE, Piece.NONE, Piece.RED},
+        });
 
-        System.out.println(boards);
-
-        boards = boards.get(0).expansion();
-
-        System.out.println(boards);
+        System.out.println(board.format());
     }
 }
